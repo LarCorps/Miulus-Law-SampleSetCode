@@ -6,7 +6,7 @@ Reproducible code accompanying:
 > *The Miulus Law: Epistemic Fitness as a Universal Constraint on Self-Referential Systems*
 > [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17365378.svg)](https://doi.org/10.5281/zenodo.17365378)
 
-This repository demonstrates how to compute **epistemic fitness (E)** and fit the **hazard curve** described in the paper using publicly available global indicators.
+This repository demonstrates how to compute **epistemic fitness $${E}$$** and fit the **hazard curve** described in the paper using publicly available global indicators.
 It also serves as a template for testing the Miulus Law in other datasets and domains.
 
 > ⚠️ The included sample dataset and configuration are illustrative. Replace them with your own indicators or domain data to reproduce the law empirically.
@@ -17,7 +17,7 @@ It also serves as a template for testing the Miulus Law in other datasets and do
 
 1. Fetches **World Bank indicators** for a list of countries (signal, noise, reach, crisis proxies).
 2. Compiles them into a unified panel dataset.
-3. Computes **epistemic fitness** (E) and fits the **hazard model** to derive instability parameters $${E_c}$$ and $${\gamma}$$.
+3. Computes **epistemic fitness** $${E}$$ and fits the **hazard model** to derive instability parameters $${E_c}$$ and $${\gamma}$$.
 4. Exports processed data, figures, and summary statistics.
 
 ---
