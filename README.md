@@ -49,7 +49,7 @@ $$
 Where:
 
 * $${E_c}$$ is the **instability threshold** — below this, collapse probability rises steeply.
-* $${\gamma}$$ is the **hazard curvature** — how sharply the risk accelerates near or below (E_c).
+* $${\gamma}$$ is the **hazard curvature** — how sharply the risk accelerates near or below $${E_c}$$.
 
 Parameter estimation is done by minimizing the log-space squared error:
 
@@ -60,7 +60,7 @@ $$
 *(Implemented via grid search or nonlinear least squares.)*
 
 $$
-E = \frac{S}{N}\,R
+E = \frac{S}{N}\R
 $$
 
 $$
