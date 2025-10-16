@@ -43,7 +43,7 @@ Epistemic fitness quantifies how well a system maintains meaningful correlation 
 ### Hazard Model
 
 $$
-h(E) = \left(\frac{E_c}{E}\right)^{\gamma}, \qquad E_c>0,\ \gamma>1
+h(E) = \left(\frac{E_c}{E}\right)^{\gamma} \qquad E_c>0,\ \gamma>1
 $$
 
 Where:
