@@ -18,7 +18,7 @@ It also serves as a template for testing the Miulus Law in any other dataset or 
 1. Fetches **World Bank indicators** for a list of countries (signal, noise, reach, crisis proxies).
 2. Compiles them into a unified panel dataset.
 3. Computes **epistemic fitness E = (S/N)·R** using robust scaling.
-4. Fits the **hazard curve** to estimate the instability threshold `E_c` and exponent `γ`.
+4. Fits the **hazard curve** to estimate the instability threshold $\`E_c`$ and exponent $\`γ`$.
 5. Exports processed data, figures, and basic causality diagnostics.
 
 ---
