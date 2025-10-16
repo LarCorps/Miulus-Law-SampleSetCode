@@ -48,8 +48,8 @@ $$
 
 Where:
 
-* (E_c) is the **instability threshold** — below this, collapse probability rises steeply.
-* (\gamma) is the **hazard curvature** — how sharply the risk accelerates near or below (E_c).
+* $${E_c}$$ is the **instability threshold** — below this, collapse probability rises steeply.
+* $${\gamma}$$ is the **hazard curvature** — how sharply the risk accelerates near or below (E_c).
 
 Parameter estimation is done by minimizing the log-space squared error:
 
@@ -117,7 +117,7 @@ Outputs appear under `outputs/`:
 
 Defines:
 
-* Which indicators represent **signal (S)**, **noise (N)**, **reach (R)**, and **crisis**
+* Which indicators represent **signal $${S}$$**, **noise (N)**, **reach (R)**, and **crisis**
 * Country list and date range
 * Fitting and plotting options
 
@@ -152,9 +152,9 @@ To analyze a different system:
 
 **Domain examples:**
 
-* **AI training:** verified-to-synthetic ratio (S/N), and audit frequency (R).
-* **Neuroscience:** sensory precision (S), neural noise (N), and feedback gain (R).
-* **Sociology:** fact-checked share (S), misinformation share (N), media reach (R).
+* **AI training:** verified-to-synthetic ratio $${S/N}$$, and audit frequency $${R}$$.
+* **Neuroscience:** sensory precision $${S}$$, neural noise $${N}$$, and feedback gain $${R}$$.
+* **Sociology:** fact-checked share $${S}$$, misinformation share $${N}$$, media reach $${R}$$.
 
 ---
 
