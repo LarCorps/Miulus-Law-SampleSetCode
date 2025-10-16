@@ -60,7 +60,7 @@ $$
 *(Implemented via grid search or nonlinear least squares.)*
 
 $$
-E = \frac{S}{N}\R
+E = \frac{S}{N}R
 $$
 
 $$
