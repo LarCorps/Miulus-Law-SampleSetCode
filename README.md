@@ -4,12 +4,12 @@ Reproducible code accompanying:
 
 > **Lauri Korpela (2025)**
 > *The Miulus Law: Epistemic Fitness as a Universal Constraint on Self-Referential Systems*
-> Zenodo DOI: **https://zenodo.org/records/17365378**
+> Zenodo DOI: **`<ADD-DOI-HERE>`**
 
 This repository demonstrates how to compute **epistemic fitness (E)** and fit the **hazard curve** described in the paper using publicly available global indicators.
-It also serves as a template for testing the Miulus Law in any other dataset or domain.
+It also serves as a template for testing the Miulus Law in other datasets and domains.
 
-> ⚠️ The included sample dataset and configuration are illustrative. Replace them with your own indicators or domain data to reproduce the law in other systems.
+> ⚠️ The included sample dataset and configuration are illustrative. Replace them with your own indicators or domain data to reproduce the law empirically.
 
 ---
 
@@ -17,9 +17,52 @@ It also serves as a template for testing the Miulus Law in any other dataset or 
 
 1. Fetches **World Bank indicators** for a list of countries (signal, noise, reach, crisis proxies).
 2. Compiles them into a unified panel dataset.
-3. Computes **epistemic fitness E = (S/N)·R** using robust scaling.
-4. Fits the **hazard curve** to estimate the instability threshold $\`E_c`$ and exponent $\`γ`$.
-5. Exports processed data, figures, and basic causality diagnostics.
+3. Computes **epistemic fitness** (E) and fits the **hazard model** to derive instability parameters (E_c) and (\gamma).
+4. Exports processed data, figures, and summary statistics.
+
+---
+
+## 🔹 Core Formulas
+
+### Epistemic Fitness
+
+$$
+E = \frac{S}{N},R
+$$
+
+Where:
+
+* (S) = verified or grounded signal
+* (N) = informational noise
+* (R) = feedback reach (the system’s capacity to self-correct)
+
+Epistemic fitness quantifies how well a system maintains meaningful correlation with reality.
+
+---
+
+### Hazard Model
+
+$$
+h(E) = \left(\frac{E_c}{E}\right)^{\gamma}, \qquad E_c>0,\ \gamma>1
+$$
+
+Where:
+
+* (E_c) is the **instability threshold** — below this, collapse probability rises steeply.
+* (\gamma) is the **hazard curvature** — how sharply the risk accelerates near or below (E_c).
+
+Parameter estimation is done by minimizing the log-space squared error:
+
+$$
+\min_{E_c,\gamma}\ \sum_i w_i\Big(\log \hat h_i - \log \big[(E_c/E_i)^{\gamma}\big]\Big)^2
+$$
+
+*(Implemented via grid search or nonlinear least squares.)*
+
+<p align="center">
+  <img src="assets/E_def.svg" width="360" alt="E = (S/N)R"><br>
+  <img src="assets/hazard_model.svg" width="400" alt="h(E) = (Ec/E)^gamma">
+</p>
 
 ---
 
@@ -50,19 +93,19 @@ Miulus-Law-Panel/
 
 ```bash
 python -m venv .venv
-source .venv/bin/activate     # Windows: .venv\Scripts\activate
+source .venv/bin/activate     # (Windows: .venv\Scripts\activate)
 pip install -r requirements.txt
 
 # run full pipeline (uses data/compiled_panel.csv by default)
 python run.py
 ```
 
-Outputs are saved under `outputs/`:
+Outputs appear under `outputs/`:
 
-* `compiled_panel_with_E.csv` – data with computed epistemic fitness
+* `compiled_panel_with_E.csv` – dataset with computed E
 * `hazard_fit.json` – fitted parameters (`E_c`, `γ`)
-* `hazard_curve.png`, `scatter_E_vs_crisis.png` – figures
-* `granger_summary.json` – pooled lag causality results
+* `hazard_curve.png`, `scatter_E_vs_crisis.png` – plots
+* `granger_summary.json` – causality diagnostics
 
 ---
 
@@ -70,9 +113,9 @@ Outputs are saved under `outputs/`:
 
 Defines:
 
-* Which indicators represent **signal**, **noise**, **reach**, and **crisis**
+* Which indicators represent **signal (S)**, **noise (N)**, **reach (R)**, and **crisis**
 * Country list and date range
-* Fitting parameters and plotting options
+* Fitting and plotting options
 
 Example:
 
@@ -99,27 +142,27 @@ To analyze a different system:
 
 1. Replace or regenerate `data/compiled_panel.csv`.
 
-   * Use `src/compile.py` with your country list or local dataset.
-2. Update `config.yaml` with your column names or new proxies.
-3. Run `python run.py` — all derived files update automatically.
+   * Use `src/compile.py` with your chosen country list or dataset.
+2. Update `config.yaml` with new column names or indicators.
+3. Run `python run.py`.
 
-**Examples of reuse:**
+**Domain examples:**
 
-* **AI training:** verified vs. synthetic data ratio (S/N) and validation frequency (R).
-* **Neuroscience:** sensory precision vs. noise vs. feedback gain.
-* **Sociology:** fact-checked vs. unverified information and media reach.
+* **AI training:** verified-to-synthetic ratio (S/N), and audit frequency (R).
+* **Neuroscience:** sensory precision (S), neural noise (N), and feedback gain (R).
+* **Sociology:** fact-checked share (S), misinformation share (N), media reach (R).
 
 ---
 
 ## 🔹 Outputs Overview
 
-| File                        | Description                            |
-| --------------------------- | -------------------------------------- |
-| `compiled_panel_with_E.csv` | Final dataset with computed E values   |
-| `hazard_fit.json`           | Fitted parameters for the hazard model |
-| `hazard_curve.png`          | Normalized hazard vs. E plot           |
-| `scatter_E_vs_crisis.png`   | Scatterplot of E vs. crisis intensity  |
-| `granger_summary.json`      | F-test results for lagged causality    |
+| File                        | Description                           |
+| --------------------------- | ------------------------------------- |
+| `compiled_panel_with_E.csv` | Data with computed epistemic fitness  |
+| `hazard_fit.json`           | Fitted parameters (`E_c`, `γ`)        |
+| `hazard_curve.png`          | Hazard vs. E plot                     |
+| `scatter_E_vs_crisis.png`   | Scatterplot of E vs. crisis intensity |
+| `granger_summary.json`      | Lagged causality results              |
 
 ---
 
@@ -127,7 +170,7 @@ To analyze a different system:
 
 If you use this repository, please cite:
 
-> **Korpela, L.** (2025). *The Miulus Law: Epistemic Fitness as a Universal Constraint on Self-Referential Systems.* Zenodo. DOI: **https://zenodo.org/records/17365378**
+> **Korpela, L.** (2025). *The Miulus Law: Epistemic Fitness as a Universal Constraint on Self-Referential Systems.* Zenodo. DOI: **`<ADD-DOI-HERE>`**
 
 ---
 
@@ -135,5 +178,15 @@ If you use this repository, please cite:
 
 * **Code:** MIT
 * **Sample data:** CC BY 4.0
+
+---
+
+## 🔹 Notes on Rendering
+
+* GitHub now renders LaTeX natively using `$$ ... $$` blocks.
+* If exporting this README to Medium or another platform, replace the formulas above with the SVGs in `/assets/`, or use plain text:
+
+  * “E equals (S divided by N) times R.”
+  * “h(E) equals (Ec over E) to the power gamma.”
 
 ---
