@@ -59,10 +59,14 @@ $$
 
 *(Implemented via grid search or nonlinear least squares.)*
 
-<p align="center">
-  <img src="assets/E_def.svg" width="360" alt="E = (S/N)R"><br>
-  <img src="assets/hazard_model.svg" width="400" alt="h(E) = (Ec/E)^gamma">
-</p>
+$$
+E = \frac{S}{N}\,R
+$$
+
+$$
+h(E) = \left(\frac{E_c}{E}\right)^{\gamma}
+$$
+
 
 ---
 
@@ -178,15 +182,5 @@ If you use this repository, please cite:
 
 * **Code:** MIT
 * **Sample data:** CC BY 4.0
-
----
-
-## 🔹 Notes on Rendering
-
-* GitHub now renders LaTeX natively using `$$ ... $$` blocks.
-* If exporting this README to Medium or another platform, replace the formulas above with the SVGs in `/assets/`, or use plain text:
-
-  * “E equals (S divided by N) times R.”
-  * “h(E) equals (Ec over E) to the power gamma.”
 
 ---
