@@ -17,7 +17,7 @@ It also serves as a template for testing the Miulus Law in other datasets and do
 
 1. Fetches **World Bank indicators** for a list of countries (signal, noise, reach, crisis proxies).
 2. Compiles them into a unified panel dataset.
-3. Computes **epistemic fitness** (E) and fits the **hazard model** to derive instability parameters (E_c) and (\gamma).
+3. Computes **epistemic fitness** (E) and fits the **hazard model** to derive instability parameters {E_c} and {\gamma}.
 4. Exports processed data, figures, and summary statistics.
 
 ---
