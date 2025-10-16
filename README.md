@@ -4,7 +4,7 @@ Reproducible code accompanying:
 
 > **Lauri Korpela (2025)**
 > *The Miulus Law: Epistemic Fitness as a Universal Constraint on Self-Referential Systems*
-> Zenodo DOI: **`https://zenodo.org/records/17365378`**
+> Zenodo DOI: **`17365378`**
 
 This repository demonstrates how to compute **epistemic fitness (E)** and fit the **hazard curve** described in the paper using publicly available global indicators.
 It also serves as a template for testing the Miulus Law in other datasets and domains.
@@ -174,7 +174,7 @@ To analyze a different system:
 
 If you use this repository, please cite:
 
-> **Korpela, L.** (2025). *The Miulus Law: Epistemic Fitness as a Universal Constraint on Self-Referential Systems.* Zenodo. DOI: **`https://zenodo.org/records/17365378`**
+> **Korpela, L.** (2025). *The Miulus Law: Epistemic Fitness as a Universal Constraint on Self-Referential Systems.* Zenodo. DOI: **`17365378`**
 
 ---
 
