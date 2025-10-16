@@ -1,8 +1,3 @@
-Excellent — now that I’ve seen your real code and config, here’s the **final README.md** that matches your actual implementation.
-It’s shorter, cleaner, and exactly mirrors what the project does — including World Bank data compilation, E-index computation, and hazard curve analysis.
-
----
-
 # Miulus Law – Global Panel Analysis (Sample Set)
 
 Reproducible code accompanying:
