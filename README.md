@@ -32,9 +32,9 @@ $$
 
 Where:
 
-* (S) = verified or grounded signal
-* (N) = informational noise
-* (R) = feedback reach (the system’s capacity to self-correct)
+* $${S}$$ = verified or grounded signal
+* $${N}$$ = informational noise
+* $${R}$$ = feedback reach (the system’s capacity to self-correct)
 
 Epistemic fitness quantifies how well a system maintains meaningful correlation with reality.
 
